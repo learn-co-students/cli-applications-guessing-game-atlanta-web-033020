@@ -4,7 +4,7 @@ def run_guessing_game
   puts "Guess a number between 1 and 6."
   
   user_input = gets.chomp 
-  comp_num = rand(1..6)
+  comp_num = rand(1..6)+1 
   
   if user_input == comp_num.to_s 
     puts "You guessed the correct number!"
@@ -15,6 +15,7 @@ def run_guessing_game
   else
     puts "Sorry! The computer guessed #{comp_num}."
   end 
+end 
   
   # while user_input != "exit" do 
     
@@ -31,6 +32,6 @@ def run_guessing_game
   # if user_input == "exit"
   #   puts "Goodbye!"
   # end
-end
+
 
   
