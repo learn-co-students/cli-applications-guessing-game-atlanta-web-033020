@@ -1,20 +1,8 @@
-require "pry"
+require 'pry'
 
 # Code your solution here!
 def welcome_player
   puts "Welcome to the game!!"
-end
-
-def first_pick
-  binding.pry
-  prompt_user
-  generate_number
-end
-
-def repick
-  puts "I have picked another number"
-  prompt_user
-  generate_number
 end
 
 def get_input
@@ -41,32 +29,22 @@ end
 def compare_guess(guess, number)
   if guess == number then
     correct_guess
-    number = repick
   else
     incorrect_guess(guess)
   end
 end
 
 def run_guessing_game 
-  welcome_player
-  binding.pry
-  number = first_pick
-  binding.pry
-  guess = 0
-  continue_game = true
+  #welcome_player
+  number = rand(1..6)
   
-  while continue_game do
-    guess = get_input
-    if guess == "exit" then
-      continue_game = false
-    elseif guess >= 1 && guess <=6
-      compare_guess(guess, number)
-    else
-      puts "That is not a valid guess."
-      prompt_user
-    end
+  guess = get_input
+  if guess == "exit" then
+    puts "Goodbye!"
+  else
+    compare_guess(guess, number)
   end
     
-  puts "Goodbye"
+  
   
 end
